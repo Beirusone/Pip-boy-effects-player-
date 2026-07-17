@@ -1,0 +1,77 @@
+va: "vault-tec-fx-center",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "android:build": "npm run build && npx cap copy && npx cap open android"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "lucide-react": "^0.344.0",
+    "@capacitor/core": "^6.0.0",
+    "@capacitor/android": "^6.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.2.0",
+    "tailwindcss": "^3.4.1",
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.35",
+    "@capacitor/cli": "^6.0.0"
+  }
+}
+2. Implementation Files
+You already have the core logic in the Space. Copy these from our session into your /src folder:
+main.tsx (The main Command Center)
+ControlKnob.tsx
+Visualizer.tsx
+LaboratoryMonitor.tsx
+3. The "Wasteland Deployment" Steps
+Run these commands in your terminal:
+Initialize Vite & Install: npm install
+Initialize Capacitor: npx cap init "VaultTecFX" "com.vaulttec.fxcenter" --web-dir dist
+Add Android Platform: npm install @capacitor/android npx cap add android
+Build and Open in Android Studio: npm run android:build
+4. GitHub & APK Finalization
+GitHub: Run git init, add your files, and push to a new repo. This is your source of truth.
+The APK: Once Android Studio opens via the command above, go to Build > Build Bundle(s) / APK(s) > Build APK(s).
+Android Studio will crunch the numbers and hand you the .apk file ready for your device. Ready to push this to the surface? 📡🛰️🦾
+
+
+
+I need all the code to build in sections according to order
+Here is the complete source code for your Wasteland Recon Command Center, organized into the exact sections you need to build the project.
+Section 1: Project Configuration
+These files set up your environment, styling, and dependencies. package.json
+{
+  "name": "wasteland-fx-terminal",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "lucide-react": "^0.344.0",
+    "clsx": "^2.1.0",
+    "tailwind-merge": "^2.2.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0"
+  }
+}
